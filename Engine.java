@@ -33,7 +33,7 @@ public class Engine implements EngineRequirements {
     public boolean go() {
         if (currentFuelLevel > 0) {
             currentFuelLevel--;
-            System.out.println("Engine running. Remaining fuel: " + currentFuelLevel);
+            System.out.println("Engine running; Remaining fuel: " + currentFuelLevel);
             return true;
         } else {
             return false;
