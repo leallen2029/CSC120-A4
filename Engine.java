@@ -30,7 +30,7 @@ public class Engine implements EngineRequirements {
     }
 
     // Go method
-    public boolean go() {
+    public Boolean go() {
         if (currentFuelLevel > 0) {
             currentFuelLevel--;
             System.out.println("Engine running; Remaining fuel: " + currentFuelLevel);
@@ -40,7 +40,7 @@ public class Engine implements EngineRequirements {
         }
     }
 
-    // Test main
+    // Test
     public static void main(String[] args) {
         Engine myEngine = new Engine(FuelType.ELECTRIC, 0.0, 100.0);
         while (myEngine.go()) {
