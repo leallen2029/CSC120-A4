@@ -13,13 +13,13 @@ public class Passenger implements PassengerRequirements {
     }
 
     // board car
-    public boolean boardCar(Car c) {
-        return c.addPassenger(this);
+    public void boardCar(Car c) {
+        c.addPassenger(this);
     }
 
     // get off car
-    public boolean getOffCar(Car c) {
-        return c.removePassenger(this);
+    public void getOffCar(Car c) {
+        c.removePassenger(this);
     }
 
     // prints passenger names
