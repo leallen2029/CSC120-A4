@@ -16,11 +16,11 @@ public class Engine implements EngineRequirements {
         return fuelType;
     }
 
-    public double getCurrentFuelLevel() {
+    public double getCurrentFuel() {
         return currentFuelLevel;
     }
 
-    public double getMaxFuelLevel() {
+    public double getMaxFuel() {
         return maxFuelLevel;
     }
 
@@ -33,19 +33,19 @@ public class Engine implements EngineRequirements {
     public Boolean go() {
         if (currentFuelLevel > 0) {
             currentFuelLevel--;
-            System.out.println("Engine running; Remaining fuel: " + currentFuelLevel);
+            System.out.println("Remaining fuel: " + currentFuelLevel);
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 
-    // Test
     public static void main(String[] args) {
-        Engine myEngine = new Engine(FuelType.ELECTRIC, 0.0, 100.0);
+        Engine myEngine = new Engine(FuelType.ELECTRIC, 5.0, 100.0);
+
         while (myEngine.go()) {
             System.out.println("Choo choo!");
         }
+
         System.out.println("Out of fuel.");
     }
 }
