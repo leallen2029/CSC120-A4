@@ -1,8 +1,8 @@
 public class Engine implements EngineRequirements {
 
-    private FuelType fuelType;
+    private final FuelType fuelType;
     private double currentFuelLevel;
-    private double maxFuelLevel;
+    private final double maxFuelLevel;
 
     // Constructor
     public Engine(FuelType fuelType, double currentFuelLevel, double maxFuelLevel) {

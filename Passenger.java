@@ -1,6 +1,6 @@
 public class Passenger implements PassengerRequirements {
 
-    private String name;
+    private final String name;
 
     // constructor
     public Passenger(String name) {

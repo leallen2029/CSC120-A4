@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class Car implements CarRequirements {
 
-    private ArrayList<Passenger> passengers;
-    private int maxCapacity;
+    private final ArrayList<Passenger> passengers;
+    private final int maxCapacity;
 
     public Car(int maxCapacity) {
         this.maxCapacity = maxCapacity;
@@ -18,7 +18,7 @@ public class Car implements CarRequirements {
         return maxCapacity - passengers.size();
     }
 
-    public Boolean addPassenger(Passenger p) {
+    public boolean addPassenger(Passenger p) {
         if (passengers.size() < maxCapacity) {
             passengers.add(p);
             return true;
@@ -26,7 +26,7 @@ public class Car implements CarRequirements {
         return false;
     }
 
-    public Boolean removePassenger(Passenger p) {
+    public boolean removePassenger(Passenger p) {
         if (passengers.contains(p)) {
             passengers.remove(p);
             return true;
@@ -35,7 +35,7 @@ public class Car implements CarRequirements {
     }
 
     public void printManifest() {
-        if (passengers.size() == 0) {
+        if (passengers.isEmpty()) {
             System.out.println("This car is EMPTY.");
         } else {
             for (Passenger p : passengers) {

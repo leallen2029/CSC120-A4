@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class Train implements TrainRequirements {
 
-    private Engine engine;
-    private ArrayList<Car> cars;
+    private final Engine engine;
+    private final ArrayList<Car> cars;
 
     // Constructor
     public Train(FuelType fuelType, double currentFuelLevel, double fuelCapacity, int nCars, int passengerCapacity) {
