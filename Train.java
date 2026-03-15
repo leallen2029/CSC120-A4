@@ -45,28 +45,23 @@ public class Train implements TrainRequirements {
 
     // Print passengers on the train
     public void printManifest() {
-        for (int i = 0; i < cars.size(); i++) {
-            System.out.println("Car " + i + ":");
-            cars.get(i).printManifest();
-        }
+        for (Car c : cars) {
+            c.printManifest();
     }
+}
 public static void main(String[] args) {
 
-    Train myTrain = new Train(FuelType.ELECTRIC, 5.0, 100.0, 2, 3);
+    Train myTrain = new Train(FuelType.ELECTRIC, 5.0, 50.0, 2, 2);
 
-    Passenger p1 = new Passenger("Alice");
-    Passenger p2 = new Passenger("Bob");
+    Passenger p1 = new Passenger("landree");
+    Passenger p2 = new Passenger("landis");
 
     p1.boardCar(myTrain.getCar(0));
-    p2.boardCar(myTrain.getCar(0));
+    p2.boardCar(myTrain.getCar(1));
 
-    Car myCar = new Car(100);
-    myCar.printManifest();
-
-    Engine myEngine = new Engine(FuelType.ELECTRIC, 50.0, 100.0);
+    Engine myEngine = new Engine(FuelType.ELECTRIC, 5.0, 100.0);
 
     myTrain.printManifest();
-
     System.out.println("Starting.");
 
     while (myEngine.go()) {

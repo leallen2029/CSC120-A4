@@ -39,7 +39,7 @@ public class Car implements CarRequirements {
             System.out.println("This car is EMPTY.");
         } else {
             for (Passenger p : passengers) {
-                System.out.println(p);
+                System.out.println("Passenger's name is " + p);
             }
         }
     }
