@@ -50,4 +50,29 @@ public class Train implements TrainRequirements {
             cars.get(i).printManifest();
         }
     }
+public static void main(String[] args) {
+
+    Train myTrain = new Train(FuelType.ELECTRIC, 5.0, 100.0, 2, 3);
+
+    Passenger p1 = new Passenger("Alice");
+    Passenger p2 = new Passenger("Bob");
+
+    p1.boardCar(myTrain.getCar(0));
+    p2.boardCar(myTrain.getCar(0));
+
+    Car myCar = new Car(100);
+    myCar.printManifest();
+
+    Engine myEngine = new Engine(FuelType.ELECTRIC, 50.0, 100.0);
+
+    myTrain.printManifest();
+
+    System.out.println("Starting.");
+
+    while (myEngine.go()) {
+        System.out.println("Choo choo!");
+    }
+
+    System.out.println("Out of fuel.");
+}
 }

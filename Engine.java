@@ -30,22 +30,12 @@ public class Engine implements EngineRequirements {
     }
 
     // Go method
-    public Boolean go() {
+    public boolean go() {
         if (currentFuelLevel > 0) {
             currentFuelLevel--;
             System.out.println("Remaining fuel: " + currentFuelLevel);
             return true;
         }
         return false;
-    }
-
-    public static void main(String[] args) {
-        Engine myEngine = new Engine(FuelType.ELECTRIC, 5.0, 100.0);
-
-        while (myEngine.go()) {
-            System.out.println("Choo choo!");
-        }
-
-        System.out.println("Out of fuel.");
     }
 }

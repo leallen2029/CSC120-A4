@@ -6,4 +6,5 @@ interface TrainRequirements {
     int seatsRemaining();
     void printManifest(); 
 
+ 
 }
