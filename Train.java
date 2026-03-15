@@ -8,7 +8,7 @@ public class Train implements TrainRequirements {
     // Constructor
     public Train(FuelType fuelType, double currentFuelLevel, double fuelCapacity, int nCars, int passengerCapacity) {
         engine = new Engine(fuelType, currentFuelLevel, fuelCapacity);
-        cars = new ArrayList<Car>();
+        cars = new ArrayList<>();
 
         for (int i = 0; i < nCars; i++) {
             cars.add(new Car(passengerCapacity));
@@ -45,29 +45,33 @@ public class Train implements TrainRequirements {
 
     // Print passengers on the train
     public void printManifest() {
-        for (Car c : cars) {
-            c.printManifest();
+        for (int i = 0; i < cars.size(); i++) {
+            System.out.println("Car " + i + ":");
+            cars.get(i).printManifest();
+        }
     }
-}
-public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    Train myTrain = new Train(FuelType.ELECTRIC, 5.0, 50.0, 2, 2);
+        Train myTrain = new Train(FuelType.ELECTRIC, 5.0, 50.0, 2, 2);
 
-    Passenger p1 = new Passenger("landree");
-    Passenger p2 = new Passenger("landis");
 
-    p1.boardCar(myTrain.getCar(0));
-    p2.boardCar(myTrain.getCar(1));
+        Passenger p1 = new Passenger("landree");
+        Passenger p2 = new Passenger("landis");
 
-    Engine myEngine = new Engine(FuelType.ELECTRIC, 5.0, 100.0);
+        p1.boardCar(myTrain.getCar(0));
+        p2.boardCar(myTrain.getCar(1));
 
-    myTrain.printManifest();
-    System.out.println("Starting.");
+        // Engine myEngine = new Engine(FuelType.ELECTRIC, 5.0, 100.0);
+        Engine myEngine = myTrain.getEngine();
 
-    while (myEngine.go()) {
-        System.out.println("Choo choo!");
+        myTrain.printManifest();
+        System.out.println("Starting.");
+
+        while (myEngine.go()) {
+            System.out.println("Choo choo!");
+        }
+
+        System.out.println("Out of fuel.");
     }
 
-    System.out.println("Out of fuel.");
-}
 }
